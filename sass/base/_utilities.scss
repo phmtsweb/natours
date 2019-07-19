@@ -1,0 +1,17 @@
+.u-center-text {
+    text-align: center;
+}
+
+$i: 0;
+@for $i from 1 through 10 {
+    .u-margin-bottom-#{$i} {
+        margin-bottom: $i * 1rem;
+    }
+    .u-margin-top-#{$i} {
+        margin-top: $i * 1rem;
+    }
+}
+
+.u-margin-bottom-small {
+    margin-bottom: 1.5rem;
+}

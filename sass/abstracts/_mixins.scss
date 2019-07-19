@@ -1,0 +1,58 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+@mixin columns($total-of-column) {
+    $i: 0;
+    $j: 0;
+    @for $i from 1 through $total-of-column - 1 {
+        @for $j from 2 through $total-of-column {
+            .col-#{$i}-of-#{$j} {
+                width: calc(#{$i} * ((100% - (#{$gutter-horizontal}) * (#{$j} - 1)) / #{$j}) + (#{$i} - 1) * #{$gutter-horizontal});
+                float: left;
+                &:not(:last-child) {
+                    margin-right: $gutter-horizontal;
+                }
+            }
+        }
+    }
+}
+
+@mixin bg-clip($value) {
+    -webkit-background-clip: $value;
+    background-clip: $value;
+}
+
+@mixin transform($value) {
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+    transform: $value;
+}
+
+@mixin transition($value) {
+    -moz-transition: $value;
+    -o-transition: $value;
+    transition: $value;
+}
+
+@mixin perspective($value) {
+    -moz-perspective: $value;
+    -ms-perspective: $value;
+    perspective: $value;
+}
+
+@mixin clip-path($value) {
+    -webkit-clip-path: $value;
+    clip-path: $value;
+}
+
+@mixin box-decoration-break($value) {
+    -webkit-box-decoration-break: $value;
+    box-decoration-break: $value;
+}
